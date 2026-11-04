@@ -1,0 +1,6 @@
+{
+  "name": "urex-power-rune", "version": "1.0.0", "private": true,
+  "scripts": {"start": "node --env-file-if-exists=.env server.cjs", "demo": "node server.cjs --demo", "test": "node --test tests/*.test.cjs"},
+  "engines": {"node": ">=22"},
+  "dependencies": {"aedes": "0.51.3", "mqtt": "5.10.4"}
+}

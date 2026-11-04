@@ -1,14 +1,23 @@
 #include "main.h"
 #include "can.h"
 #include "motor_test.h"
+#include "rune_app.h"
 void SystemClock_Config(void);
 int main(void)
 {
     HAL_Init();
     SystemClock_Config();
+#if UREX_BLADE_ID == 0
     MX_CAN1_Init();
     MotorTest_Init();
-    while (1) { MotorTest_Update(); }
+#endif
+    Rune_Init();
+    while (1) {
+        Rune_Update();
+#if UREX_BLADE_ID == 0
+        MotorTest_Update();
+#endif
+    }
 }
 
 void SystemClock_Config(void)

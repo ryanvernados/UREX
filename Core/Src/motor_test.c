@@ -2,8 +2,8 @@
 #include "can.h"
 
 volatile MotorTestStatus motor_status;
-volatile uint8_t motor_enabled = 1U;
-volatile int32_t motor_target_rpm = MOTOR_TARGET_ROTOR_RPM;
+volatile uint8_t motor_enabled = 0U;
+volatile int32_t motor_target_rpm = 0;
 static uint32_t started_ms;
 static uint32_t previous_ms;
 static float integral;
